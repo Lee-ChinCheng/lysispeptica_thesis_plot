@@ -1,0 +1,12 @@
+name: test310
+channels:
+  - defaults
+channel_priority: strict
+dependencies:
+  - python=3.10.16
+  - numpy=1.26.4
+  - pandas==2.2.3
+  - tensorflow==2.16.1
+  - pytorch-cpu=2.4.1
+  - shap=0.48.0
+  - matplotlib=3.10.8 
