@@ -1,0 +1,55 @@
+
+
+2026-02-03 18:22:03
+   CNN 32,7 64,5 64,3 flatten  dense 256,128,32, zs-norm, merge_5fold_train 
+Baseline
+batch_size: 2048
+dropout_rate: 0.375
+epochs: 90
+initial_lr: 0.0005
+decay_rate: 0.92
+bottom_lr: 9e-05
+random_seed: 101502
+train 0.446 val 0.549
+
++-------------------------------------------------------------------+
+| testset 1                                                         |
++--+-------+-------+-------+--------+-------+-------+-------+-------+
+|  |   Acc |  Spec |  Prec | Recall |    f1 |   MCC | auROC | auPRC |
++--+-------+-------+-------+--------+-------+-------+-------+-------+
+|  | 0.734 | 0.747 | 0.720 |  0.720 | 0.720 | 0.467 | 0.798 | 0.747 |
++--+-------+-------+-------+--------+-------+-------+-------+-------+
++-------------------------------------------------------------------+
+| testset 2                                                         |
++--+-------+-------+-------+--------+-------+-------+-------+-------+
+|  |   Acc |  Spec |  Prec | Recall |    f1 |   MCC | auROC | auPRC |
++--+-------+-------+-------+--------+-------+-------+-------+-------+
+|  | 0.722 | 0.727 | 0.413 |  0.704 | 0.521 | 0.367 | 0.796 | 0.528 |
++--+-------+-------+-------+--------+-------+-------+-------+-------+
+
+
+### model
+    inputs = tf.keras.layers.Input(shape=(49, 8)) #tf.keras.layers.Input
+
+    x = tf.keras.layers.Conv1D(filters=32, kernel_size=7, padding='same')(inputs)
+    x = tf.keras.layers.PReLU()(x)
+    x = tf.keras.layers.Conv1D(filters=64, kernel_size=5, padding='same')(x)
+    x = tf.keras.layers.PReLU()(x)
+    x = tf.keras.layers.Conv1D(filters=64, kernel_size=3, padding='same')(x)
+    x = tf.keras.layers.PReLU()(x)
+
+    y = tf.keras.layers.Flatten()( x )
+    
+    y = tf.keras.layers.Dense(256)(y)  
+    y = tf.keras.layers.PReLU()(y)
+    y = tf.keras.layers.Dropout(dropout_rate)(y)
+
+    y = tf.keras.layers.Dense(128)(y)
+    y = tf.keras.layers.PReLU()(y)
+    y = tf.keras.layers.Dropout(dropout_rate)(y)
+
+    y = tf.keras.layers.Dense(32)(y)
+    y = tf.keras.layers.PReLU()(y)
+    y = tf.keras.layers.Dropout(dropout_rate)(y)
+
+    outputs = tf.keras.layers.Dense(2, activation='softmax')(y)
