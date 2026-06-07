@@ -1,0 +1,174 @@
+ID	Strain Type	Class	Predictive value
+6546	Human erythrocytes	Active	0.68
+14302	Human erythrocytes	Active	0.91
+6702	Human erythrocytes	Active	0.56
+4221	Human erythrocytes	Not Active	0.65
+3536	Human erythrocytes	Active	0.62
+18190	Human erythrocytes	Active	0.78
+1890	Human erythrocytes	Not Active	0.52
+12169	Human erythrocytes	Active	0.56
+16208	Human erythrocytes	Not Active	0.51
+2122	Human erythrocytes	Not Active	0.55
+116	Human erythrocytes	Active	0.84
+6993	Human erythrocytes	Not Active	0.73
+6979	Human erythrocytes	Active	0.57
+17202	Human erythrocytes	Not Active	0.81
+16351	Human erythrocytes	Not Active	0.54
+6831	Human erythrocytes	Active	0.71
+17523	Human erythrocytes	Active	0.55
+19826	Human erythrocytes	Not Active	0.88
+18987	Human erythrocytes	Active	0.51
+3647	Human erythrocytes	Not Active	0.97
+13717	Human erythrocytes	Active	0.74
+4287	Human erythrocytes	Active	0.6
+991	Human erythrocytes	Active	0.51
+13349	Human erythrocytes	Not Active	0.8
+16939	Human erythrocytes	Not Active	0.77
+13823	Human erythrocytes	Not Active	0.68
+7762	Human erythrocytes	Not Active	0.93
+2198	Human erythrocytes	Not Active	0.66
+13489	Human erythrocytes	Active	0.71
+16228	Human erythrocytes	Active	0.75
+13719	Human erythrocytes	Not Active	0.7
+17195	Human erythrocytes	Not Active	0.86
+17198	Human erythrocytes	Not Active	0.99
+14304	Human erythrocytes	Active	0.55
+3446	Human erythrocytes	Not Active	0.5
+11955	Human erythrocytes	Active	0.52
+1427	Human erythrocytes	Not Active	0.95
+15848	Human erythrocytes	Not Active	0.6
+18985	Human erythrocytes	Active	0.52
+2715	Human erythrocytes	Active	0.65
+14298	Human erythrocytes	Not Active	0.71
+15040	Human erythrocytes	Not Active	0.54
+3194	Human erythrocytes	Active	0.64
+19553	Human erythrocytes	Active	0.73
+10354	Human erythrocytes	Not Active	0.63
+15801	Human erythrocytes	Active	0.66
+5694	Human erythrocytes	Not Active	0.6
+14316	Human erythrocytes	Active	0.53
+10606	Human erythrocytes	Not Active	0.98
+2253	Human erythrocytes	Not Active	0.65
+18786	Human erythrocytes	Not Active	0.8
+15844	Human erythrocytes	Not Active	0.56
+14266	Human erythrocytes	Not Active	0.83
+14261	Human erythrocytes	Not Active	0.81
+14260	Human erythrocytes	Not Active	0.81
+14231	Human erythrocytes	Not Active	0.56
+19521	Human erythrocytes	Not Active	0.6
+2447	Human erythrocytes	Not Active	0.75
+1881	Human erythrocytes	Not Active	0.75
+3563	Human erythrocytes	Not Active	0.54
+8487	Human erythrocytes	Not Active	0.95
+10213	Human erythrocytes	Not Active	0.66
+5239	Human erythrocytes	Not Active	0.6
+3358	Human erythrocytes	Not Active	0.73
+12416	Human erythrocytes	Not Active	0.53
+37	Human erythrocytes	Active	0.6
+9881	Human erythrocytes	Not Active	0.53
+5167	Human erythrocytes	Active	0.72
+1004	Human erythrocytes	Not Active	0.57
+996	Human erythrocytes	Not Active	0.7
+14997	Human erythrocytes	Active	0.85
+2407	Human erythrocytes	Active	0.51
+5721	Human erythrocytes	Not Active	0.7
+16234	Human erythrocytes	Active	0.65
+11229	Human erythrocytes	Active	0.81
+12611	Human erythrocytes	Not Active	0.93
+6251	Human erythrocytes	Active	0.87
+8269	Human erythrocytes	Active	0.6
+13913	Human erythrocytes	Not Active	0.85
+4756	Human erythrocytes	Not Active	0.92
+12572	Human erythrocytes	Not Active	0.77
+10591	Human erythrocytes	Not Active	0.79
+-19202	Human erythrocytes	Active	0.52
+-8828	Human erythrocytes	Active	0.86
+-10211	Human erythrocytes	Active	0.51
+-18169	Human erythrocytes	Active	0.79
+-2355	Human erythrocytes	Not Active	0.51
+-1491	Human erythrocytes	Not Active	0.63
+-13795	Human erythrocytes	Active	0.93
+-17391	Human erythrocytes	Not Active	0.7
+-1501	Human erythrocytes	Active	0.51
+-2044	Human erythrocytes	Active	0.67
+-14733	Human erythrocytes	Not Active	0.97
+-2362	Human erythrocytes	Not Active	0.53
+-2159	Human erythrocytes	Active	0.55
+-19010	Human erythrocytes	Not Active	0.68
+-13101	Human erythrocytes	Not Active	0.84
+-5309	Human erythrocytes	Not Active	0.73
+-17004	Human erythrocytes	Not Active	0.65
+-17238	Human erythrocytes	Not Active	0.76
+-11749	Human erythrocytes	Not Active	0.8
+-11750	Human erythrocytes	Not Active	0.85
+-11739	Human erythrocytes	Not Active	0.78
+-5521	Human erythrocytes	Not Active	0.55
+-17053	Human erythrocytes	Active	0.78
+-16994	Human erythrocytes	Not Active	0.52
+-12114	Human erythrocytes	Active	0.58
+-4477	Human erythrocytes	Active	0.62
+-3089	Human erythrocytes	Not Active	0.78
+-10225	Human erythrocytes	Not Active	0.88
+-18524	Human erythrocytes	Not Active	0.5
+-2530	Human erythrocytes	Not Active	0.57
+-2531	Human erythrocytes	Active	0.62
+-3478	Human erythrocytes	Not Active	0.77
+-12494	Human erythrocytes	Not Active	0.54
+-4666	Human erythrocytes	Not Active	0.72
+-6818	Human erythrocytes	Not Active	0.91
+-14883	Human erythrocytes	Not Active	0.5
+-18144	Human erythrocytes	Not Active	0.97
+-14178	Human erythrocytes	Not Active	0.79
+-718	Human erythrocytes	Not Active	0.76
+-2845	Human erythrocytes	Active	0.56
+-5494	Human erythrocytes	Active	0.56
+-4167	Human erythrocytes	Active	0.65
+-19013	Human erythrocytes	Not Active	0.57
+-19580	Human erythrocytes	Active	0.58
+-5385	Human erythrocytes	Not Active	0.75
+-2864	Human erythrocytes	Not Active	0.62
+-684	Human erythrocytes	Not Active	0.81
+-2597	Human erythrocytes	Not Active	0.56
+-12670	Human erythrocytes	Not Active	0.85
+-4641	Human erythrocytes	Not Active	0.89
+-12690	Human erythrocytes	Active	0.6
+-16899	Human erythrocytes	Not Active	0.51
+-11262	Human erythrocytes	Active	0.52
+-7382	Human erythrocytes	Not Active	0.64
+-4741	Human erythrocytes	Not Active	0.56
+-2358	Human erythrocytes	Not Active	0.71
+-4582	Human erythrocytes	Not Active	1
+-8588	Human erythrocytes	Not Active	0.93
+-2014	Human erythrocytes	Not Active	0.61
+-16653	Human erythrocytes	Not Active	0.88
+-4294	Human erythrocytes	Not Active	0.8
+-15845	Human erythrocytes	Not Active	0.68
+-4973	Human erythrocytes	Not Active	0.55
+-9873	Human erythrocytes	Not Active	0.8
+-10956	Human erythrocytes	Not Active	0.97
+-8589	Human erythrocytes	Not Active	0.61
+-12905	Human erythrocytes	Not Active	0.55
+-14312	Human erythrocytes	Active	0.68
+-5972	Human erythrocytes	Not Active	0.63
+-8092	Human erythrocytes	Not Active	0.55
+-8491	Human erythrocytes	Not Active	0.88
+-13006	Human erythrocytes	Not Active	0.51
+-15523	Human erythrocytes	Not Active	0.9
+-5108	Human erythrocytes	Not Active	0.61
+-11939	Human erythrocytes	Not Active	0.8
+-5546	Human erythrocytes	Not Active	0.65
+-8075	Human erythrocytes	Not Active	0.94
+-1718	Human erythrocytes	Not Active	0.96
+-9847	Human erythrocytes	Not Active	0.56
+-4650	Human erythrocytes	Active	0.55
+-15115	Human erythrocytes	Not Active	0.63
+-13162	Human erythrocytes	Not Active	0.57
+-17287	Human erythrocytes	Not Active	0.94
+-17283	Human erythrocytes	Not Active	0.86
+-481	Human erythrocytes	Not Active	0.8
+-12776	Human erythrocytes	Not Active	0.88
+-8044	Human erythrocytes	Active	0.53
+-8992	Human erythrocytes	Not Active	0.77
+-15147	Human erythrocytes	Not Active	0.69
+-19407	Human erythrocytes	Not Active	0.95
+-5670	Human erythrocytes	Not Active	0.78

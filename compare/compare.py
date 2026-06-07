@@ -97,7 +97,7 @@ def show_table(values, headers=None, v_headers=None, title=None, float_fmt='%.3f
     #print(txt)
     return txt
 
-
+'''
 def get_hemolysis_from_t2(t2_basic_info):
     #>GAN-pep1_64	27.2_124.24
     # 64 uM, 27.2 hemolysis%, 124.24 ug/ml
@@ -170,5 +170,168 @@ print(t1_toxinpred_mtx)
 #{'Acc': 0.543, 'Spec': 0.286, 'Prec': 0.511, 'Recall': 0.829, 'F1': 0.633, 'MCC': 0.136, 'auROC': 0.575, 'auPRC': 0.534}
 print(t2_toxinpred_mtx)
 #{'Acc': 0.5, 'Spec': 0.465, 'Prec': 0.243, 'Recall': 0.63, 'F1': 0.351, 'MCC': 0.078, 'auROC': 0.512, 'auPRC': 0.206}
+#====================================================================
+'''
+
+
+### test set predicted by hemoPI2
+
+
+ourt1 = 'test_set/test_set1_173.fa'
+def collect_t1_basic_info(ourt1): #output dict
+    t1d={}
+    with open(ourt1, 'r') as f:
+        #>-17283	1.0_206.335_100.0	0.86
+        #RRGWALRPVLAFGRR
+        for l in f:
+            l=l.strip()
+            if l[0]=='>':
+                sid=l.split('\t')[0].lstrip('>')
+                hm=float(l.split('\t')[1].split('_')[0])
+                ugml=float(l.split('\t')[1].split('_')[1])
+                uM=float(l.split('\t')[1].split('_')[2])
+            else:
+                seq=l
+                t1d[sid]=[hm,ugml,uM,'','',seq, 0] 
+                #1st'' for label, 2nd '' for predicted prob, 0->further usage 
+                
+    print('len(t1d)' , len(t1d))
+    return t1d
+
+#t1d[sid]=[hm,ugml,uM,'','',seq, 0]
+t1d = collect_t1_basic_info(ourt1)
+#=================================
+
+
+#====================================
+# HemoPI2
+#====================================
+t1_hemopi2_csv='compare/hemoPI2/t1_hemopi2.csv'
+# T_label P definition: hemolysis >= 50% dbc > or >=
+def HemoPI2_result_analysis( hemoPI2_csv, t1d ):
+    #SeqID,Seq,ML Score,Prediction
+    #>14302,FALALKALKKLAKKLKKLAKKAL,0.7560,Hemolytic
+
+    ytrue, ypred =[],[]
+    with open(hemoPI2_csv, 'r') as f:
+        r=pam=nam=pam2=nam2=0
+        for l in f:
+            l=l.strip().split(',')
+            r+=1
+            if r<2: continue
+            sid=l[0].lstrip('>')
+            prob=float(l[2])
+            ypred.append(prob)
+            if (t1d[sid][0] >= 50):
+                ytrue.append(1)  
+                pam+=1
+            else:
+                ytrue.append(0)  
+                nam+=1
+                
+    #-------------------
+    print('using HemoPI2 output prob and HemoPI2 true label definition (Hemo>=50% -> P)')
+    #print('HemoPI2 P,N its defnition P&N counts', pam,nam) #64 109
+    #print(len(ytrue))
+    #print(len(ypred))
+
+    res = metric_scores(ytrue, ypred) #res is a dictionary of confusion matrix
+    #print(res) 
+
+    str_table = show_table([_.values() for _ in res],
+                    headers=res[0].keys(),
+                    v_headers=['HemoPI2'],
+                    title='test set 1', float_fmt='%.3f')
+    return res
+    
+   
+HemoPI2_res = HemoPI2_result_analysis(t1_hemopi2_csv, t1d)
+
+
+'''
++--------------------------------------------------------------------------+
+| test set 1                                                               |
++---------+-------+-------+-------+--------+-------+-------+-------+-------+
+|         |   Acc |  Spec |  Prec | Recall |    F1 |   MCC | auROC | auPRC |
++---------+-------+-------+-------+--------+-------+-------+-------+-------+
+| HemoPI2 | 0.584 | 0.459 | 0.464 |  0.797 | 0.586 | 0.256 | 0.688 | 0.565 |
++---------+-------+-------+-------+--------+-------+-------+-------+-------+
+'''
+#====================================
+
+
+
+
+#====================================
+# linearAMP
+#====================================
+t1_linearAMP_txt='compare/linearAMP/t1_linearAMP.txt'
+# T_label P definition: hemolysis > 40% and concentration < 40 ug/ml
+# be careful on Predictive_value(float) column, and Type_Class(1or0) column
+
+def linearAMP_result_analysis(amp_txt, t1d):
+    #ID	Strain Type	Class	Predictive value
+    #12139	Human erythrocytes	Active	0.51
+    #['-16803', 'Human erythrocytes', 'Not Active', '0.51']
+    ytrue, ytrue2, ypred, ypred2 =[],[],[],[]
+
+    with open(amp_txt, 'r') as f:
+        r=pam=nam=pam2=nam2=0
+        for l in f:
+            r+=1
+            if r<2: continue
+            l=l.strip().split('\t')        
+            sid, prob = l[0], float(l[3])
+           
+            #--- apply it's PN def ---       
+            if (t1d[sid][0] > 40) and (t1d[sid][1] < 40): #(hm,ugml,uM)
+                ytrue.append(1)
+               
+                #using Predictive_value column, not Type_Class column
+                ypred.append(prob) 
+                #using Type_Class column, not Predictive_value column
+                if l[2][0]=='N':    ypred2.append(0) 
+                else:               ypred2.append(1)
+                
+            else:
+                ytrue.append(0)
+
+                #using Predictive_value column, not Type_Class column
+                ypred.append(prob)
+                #using Type_Class column, not Predictive_value column
+                if l[2][0]=='N':    ypred2.append(0) 
+                else:               ypred2.append(1)
+    #--------------------------------------
+
+      
+    res  = metric_scores(ytrue, ypred)
+    res2  = metric_scores(ytrue, ypred2)
+    res3 = res2.copy()
+    res3['auROC'], res3['auPRC'] = res['auROC'], res['auPRC']
+
+    pf_li=[res, res2, res3]
+    v_h_li=['linearAMP, using Predictive_value column','linearAMP, using Type_Class column', 'linearAMP final version']
+    str_table = show_table([_.values() for _ in pf_li],
+                        headers = pf_li[0].keys(),
+                        v_headers=v_h_li,
+                        title="test set 1", float_fmt='%.3f')
+    
+    return res
+    
+
+
+linearAMP_res = linearAMP_result_analysis(t1_linearAMP_txt, t1d)
+'''
++-----------------------------------------------------------------------------------------------------------+
+| test set 1                                                                                                |
++------------------------------------------+-------+-------+-------+--------+-------+-------+-------+-------+
+|                                          |   Acc |  Spec |  Prec | Recall |    F1 |   MCC | auROC | auPRC |
++------------------------------------------+-------+-------+-------+--------+-------+-------+-------+-------+
+| linearAMP, using Predictive_value column | 0.081 | 0.019 | 0.065 |  1.000 | 0.122 | 0.035 | 0.494 | 0.059 |
+|       linearAMP, using Type_Class column | 0.734 | 0.728 | 0.170 |  0.818 | 0.281 | 0.289 | 0.773 | 0.500 |
+|                  linearAMP final version | 0.734 | 0.728 | 0.170 |  0.818 | 0.281 | 0.289 | 0.494 | 0.059 | #for thesis
++------------------------------------------+-------+-------+-------+--------+-------+-------+-------+-------+
+'''
+#========================================
 
 
