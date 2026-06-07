@@ -1,0 +1,19 @@
+ID	Strain Type	Class	Predictive value
+GA1_64	Human erythrocytes	Active	0.53
+GA2_64	Human erythrocytes	Not Active	0.51
+GA3_64	Human erythrocytes	Not Active	0.55
+GA4_64	Human erythrocytes	Active	0.51
+GA5_64	Human erythrocytes	Active	0.81
+GA6_64	Human erythrocytes	Active	0.79
+GA7_64	Human erythrocytes	Not Active	0.51
+GA8_64	Human erythrocytes	Not Active	0.54
+Pep-1v_64	Human erythrocytes	Not Active	0.78
+Pep-3m_64	Human erythrocytes	Not Active	0.91
+Pep-6f_64	Human erythrocytes	Not Active	0.86
+Pep-7c_64	Human erythrocytes	Not Active	0.75
+Pep-8m_64	Human erythrocytes	Active	0.71
+Pep-9m_g_64	Human erythrocytes	Not Active	0.52
+ACP23_gag_24_64	Human erythrocytes	Not Active	0.65
+AMP23_gag_20_64	Human erythrocytes	Not Active	0.54
+AFP23_gag_18_64	Human erythrocytes	Not Active	0.95
+AVP23_gag1_23_64	Human erythrocytes	Not Active	0.75
