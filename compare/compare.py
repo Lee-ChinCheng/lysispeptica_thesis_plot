@@ -97,7 +97,7 @@ def show_table(values, headers=None, v_headers=None, title=None, float_fmt='%.3f
     #print(txt)
     return txt
 
-'''
+
 def get_hemolysis_from_t2(t2_basic_info):
     #>GAN-pep1_64	27.2_124.24
     # 64 uM, 27.2 hemolysis%, 124.24 ug/ml
@@ -171,12 +171,12 @@ print(t1_toxinpred_mtx)
 print(t2_toxinpred_mtx)
 #{'Acc': 0.5, 'Spec': 0.465, 'Prec': 0.243, 'Recall': 0.63, 'F1': 0.351, 'MCC': 0.078, 'auROC': 0.512, 'auPRC': 0.206}
 #====================================================================
-'''
 
 
-### test set predicted by hemoPI2
 
 
+
+### collect basic information of test set 1
 ourt1 = 'test_set/test_set1_173.fa'
 def collect_t1_basic_info(ourt1): #output dict
     t1d={}
