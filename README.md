@@ -3,11 +3,11 @@ Generating images for the LysisPeptica thesis, helping visualize concepts and re
 
 ---
 <p align="center">
-  <img src="./others/main_concept2.png " alt="main_concept2" width="400" height="508"/>
+  <img src="./others/thesis_Fig-6.PNG " alt="thesis_Fig-6" width="878" height="500"/>
 </p>
 
 * main flowchart of LysisPeptica ensemble model 
-* img path: /others/main_concept2.png 
+* img path: /others/thesis_Fig-6.PNG
 * was plotted by ppt
 
 ---
