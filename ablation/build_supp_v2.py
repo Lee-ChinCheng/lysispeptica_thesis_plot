@@ -287,10 +287,13 @@ def build():
     set_text(findp('Supplementary Figure S1.'), FIG_S1_CAP)
 
     # ---- 2. insert the new notes and tables before the figure section -------
-    figp = findp('Supplementary Figure S1.')
-    # anchor = the last empty paragraph before the Figure S1 image
-    idx = d.paragraphs.index(figp)
-    anchor = d.paragraphs[idx - 2]          # the image paragraph is idx-1
+    # anchor = the paragraph just before the Figure S1 image (which itself
+    # sits immediately before the Figure S1 caption)
+    paras = d.paragraphs
+    idx = next(i for i, q in enumerate(paras)
+               if q.text.strip().startswith('Supplementary Figure S1.'))
+    assert 'graphicData' in paras[idx - 1]._p.xml, 'image expected just before the S1 caption'
+    anchor = paras[idx - 2]
     ins = Ins(d, anchor)
 
     ins.para('')
